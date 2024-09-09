@@ -1,0 +1,15 @@
+---
+- name: Install nginx and start it
+  hosts: dev-servers
+  become: yes            # root permission given
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes      # nginx starts after system restart

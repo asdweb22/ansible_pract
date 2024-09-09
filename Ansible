@@ -1,0 +1,72 @@
+Ansible : configuration management tool
+- at a one time update software or install on multiple instances on that time we need ansible
+- ansible supports multi environment like dev,prod,test
+- ansible supports muticloud
+- most asked question Terraform vs ansible
+ so terraform help us to create infrastructure and to manage this infrastructure means installation, updation in that infrastruture we use ansible
+
+- ansible is a push based machanisum means in one system ansible is installed and this instance will push updates on other instances 
+
+
+Key Concepts of ansible :
+
+1) Play Book:
+
+Definition: Playbooks are YAML files that define a series of tasks to be executed on remote systems.
+Purpose: They describe automation steps in a human-readable way. You can use playbooks to manage configurations, deploy applications, or execute commands.
+
+2) Tasks
+Definition: Tasks are actions performed in a playbook, like installing software, starting services, or copying files.
+Purpose: Each task typically calls a specific module to perform an action. 
+
+3) Inventories
+Definition: An inventory is a file that lists the systems (hosts) that Ansible will manage.
+Purpose: The inventory file groups systems by categories (e.g., dev-servers, prod-servers), allowing tasks to be executed on specific hosts.
+
+4) Modules
+Definition: Ansible modules are small programs that perform specific tasks (e.g., yum, apt, service, copy).
+Purpose: Modules are used to abstract away complex system commands into reusable pieces of code, making playbooks simpler to write.
+
+5) Roles
+Definition: Roles are a way of organizing playbooks into reusable components (like tasks, handlers, variables, and templates).
+Purpose: Roles allow you to split complex playbooks into more manageable pieces, which promotes reusability and maintainability.
+
+6) Variables
+Definition: Variables are used to store values that can change based on the environment, such as configuration paths, ports, or usernames.
+Purpose: They make your playbooks more flexible and reusable by allowing you to define parameters that change dynamically across environments.
+
+7) Ad-Hoc Commands
+Definition: These are single-line commands you can run directly without writing a playbook, usually for quick, one-time tasks.
+Purpose: They are used for immediate automation needs (e.g., ansible -m ping all to test connectivity).
+
+8) Handlers
+Definition: Handlers are similar to tasks but only run when triggered by a task using the notify keyword.
+Purpose: They are typically used for restarting services after a change (e.g., restart NGINX after updating the configuration).
+
+9)Facts
+Definition: Facts are system properties (like IP addresses, memory, OS) collected by Ansible from the target machine.
+Purpose: Ansible collects these facts automatically and uses them in playbooks to make decisions based on the target system’s state.
+
+10) Templates
+Definition: Templates allow you to create files dynamically based on variables using the Jinja2 templating language.
+Purpose: Templates are useful for creating configuration files that need to vary slightly based on variables or facts.
+
+11) Idempotency
+Definition: An important property of Ansible, where tasks are written in such a way that they can be executed multiple times without changing the system if it is already in the desired state.
+Purpose: Ensures that running a playbook multiple times won't cause unintended changes or damage.
+
+12) YAML
+Definition: YAML is the human-readable data serialization format used to write playbooks.
+Purpose: Ansible uses YAML because it's easy to read, write, and understand compared to other formats like JSON or XML.
+
+13) Ansible Galaxy
+Definition: Ansible Galaxy is a repository of pre-built roles that can be downloaded and reused.
+Purpose: Provides access to a large collection of community-created roles to simplify your automation.
+
+14) Vault
+Definition: Ansible Vault is a feature that allows you to encrypt sensitive data like passwords and API keys.
+Purpose: Used to protect sensitive information within playbooks or inventory files.
+
+15) Callbacks and Plugins
+Definition: Callbacks and plugins extend Ansible’s functionality (e.g., logging, notifications).
+Purpose: Customize the behavior of Ansible during execution (e.g., sending notifications after tasks complete).

@@ -1,0 +1,9 @@
+---
+- name: Dates playbook
+  hosts: dev-servers      # Group name
+  tasks:
+    - name: show date
+      command: date
+
+    - name: show date again
+      command: date
